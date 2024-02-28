@@ -7,13 +7,12 @@ namespace MCorporation.Infrastructure
 {
     public static class MCorporationInjection
     {
-        public static IServiceCollection AddInfrastruction(this IServiceCollection service, IConfiguration configuration)
+        public static IServiceCollection AddInfrastruction(this IServiceCollection service, Microsoft.Extensions.Configuration.IConfiguration configuration)
         {
             service.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
-            }
-            );
+            });
             return service;
         }
     }

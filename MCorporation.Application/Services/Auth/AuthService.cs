@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MCorporation.Application.Services.Auth
+﻿namespace MCorporation.Application.Services.Auth
 {
-    public class AuthService
+    public class AuthService : IAuthService
     {
     }
 }

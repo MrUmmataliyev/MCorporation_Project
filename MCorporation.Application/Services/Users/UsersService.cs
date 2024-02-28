@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MCorporation.Application.Services.Users
+﻿namespace MCorporation.Application.Services.Users
 {
-    public class UsersService
+    public class UsersService : IUsersService
     {
     }
 }
