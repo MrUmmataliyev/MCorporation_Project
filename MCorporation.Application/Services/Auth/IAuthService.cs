@@ -5,6 +5,6 @@ namespace MCorporation.Application.Services.Auth
 {
     public interface IAuthService
     {
-        Task<string> GenerateToken(TokenUser user);
+        Task<string> GenerateToken(string login, string password);
     }
 }
