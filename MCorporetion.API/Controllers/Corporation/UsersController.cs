@@ -22,38 +22,38 @@ namespace MCorporation.API.Controllers.Corporation
 
         [HttpGet]
         [IdentityFilter(Permission.GetAllUsers)]
-        public IActionResult GetAllUsers()
+        public Task<List<User>> GetAllUsers()
         {
             var res = _usersService.GetAllUsers();
-            return Ok(res);
+            return res;
         }
         [HttpGet]
         [IdentityFilter(Permission.GetUsersById)]
-        public IActionResult GetUsersById(int id)
+        public Task<User> GetUsersById(int id)
         {
-            var res = _usersService.GetUserById(id);
-            return Ok(res);
+            Task<User>? res = _usersService.GetUserById(id);
+            return res;
         }
         [HttpPost]
         [IdentityFilter(Permission.CreateUser)]
-        public IActionResult CreateUser(User user)
+        public Task<string> CreateUser(User user)
         {
-           var res =  _usersService.CreateUser(user);
-           return Ok(res);
+           Task<string> res =  _usersService.CreateUser(user);
+           return res;
         }
         [HttpPut]
         [IdentityFilter(Permission.UpdateUser)]
-        public IActionResult UpdateUser(int id,User user)
+        public Task<string> UpdateUser(int id,User user)
         {
             var res = _usersService.UpdateUser(id,user);
-            return Ok(res);
+            return res;
         }
         [HttpDelete]
         [IdentityFilter(Permission.DeleteUser)]
-        public IActionResult DeleteUser(int id)
+        public Task<string> DeleteUser(int id)
         {
-            var res = _usersService.DeleteUser(id);
-            return Ok(res);
+            Task<string> res = _usersService.DeleteUser(id);
+            return res;
         }
     }
 }
