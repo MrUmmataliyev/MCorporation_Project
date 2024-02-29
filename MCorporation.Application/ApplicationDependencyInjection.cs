@@ -1,4 +1,5 @@
 ﻿using MCorporation.Application.Services.Auth;
+
 using MCorporation.Application.Services.Users;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +11,7 @@ namespace MCorporation.Application
         {
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUsersService, UsersService>();
+
             return services;
         }
     }

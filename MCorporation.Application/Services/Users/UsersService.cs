@@ -4,27 +4,27 @@ namespace MCorporation.Application.Services.Users
 {
     public class UsersService : IUsersService
     {
-        public Task<string> CreateUser()
+        public async Task<string> CreateUser(User user)
+        {
+            return "Ishlayapti";
+        }
+
+        public async Task<string> DeleteUser(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<string> DeleteUser()
+        public async Task<User> GetAllUsers()
         {
             throw new NotImplementedException();
         }
 
-        public Task<User> GetAllUsers()
+        public async Task<User> GetUserById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<User> GetUserById()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<string> UpdateUser()
+        public async Task<string> UpdateUser(int id, User user)
         {
             throw new NotImplementedException();
         }

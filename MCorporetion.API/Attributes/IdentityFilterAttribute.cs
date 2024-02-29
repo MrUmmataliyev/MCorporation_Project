@@ -1,4 +1,5 @@
-﻿using MCorporation.Domain.Entities.Enums;
+﻿
+using MCorporation.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Security.Claims;
@@ -16,13 +17,13 @@ namespace MCorporation.API.Attributes
             _permissionId = (int)permissionId;
         }
 
-        public void OnAuthorization(AuthorizationFilterContext context)
+        public async void OnAuthorization(AuthorizationFilterContext context)
         {
             var identity = context.HttpContext.User.Identity as ClaimsIdentity;
 
             var permissionIds = identity.FindFirst("Permissions")?.Value;
 
-            var result = JsonSerializer.Deserialize<List<int>>(permissionIds).Any(x => _permissionId == x);
+            var result =  JsonSerializer.Deserialize<List<int>>(permissionIds).Any(x => _permissionId == x);
 
             if (!result)
             {

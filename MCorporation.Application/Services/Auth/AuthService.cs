@@ -46,11 +46,12 @@ namespace MCorporation.Application.Services.Auth
                 }
                 var jsonContent = JsonSerializer.Serialize(permission);
 
+                string gu = Guid.NewGuid().ToString();
                 List<Claim> claims = new List<Claim>()
                 {
                     new Claim(ClaimTypes.Role, user.Role),
                     new Claim("UserFullName", user.FullName),
-                    new Claim("TokenId", Guid.NewGuid().ToString()),
+                    new Claim("TokenId", gu),
                     new Claim("CratedDate", DateTime.UtcNow.ToString()),
                     new Claim("Permissions", jsonContent)
 
